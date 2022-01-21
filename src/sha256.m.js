@@ -643,4 +643,7 @@ exports.sha224 = createMethod(true);
 exports.sha256.hmac = createHmacMethod();
 exports.sha224.hmac = createHmacMethod(true);
 
+export const sha256 = exports;
+export const sha224 = exports.sha224;
+
 export default exports;
