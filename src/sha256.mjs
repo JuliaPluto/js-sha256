@@ -5,6 +5,9 @@
  * @author Chen, Yi-Cyuan [emn178@gmail.com]
  * @copyright Chen, Yi-Cyuan 2014-2017
  * @license MIT
+ *
+ * Edited to be a module, so we can `import { sha256 } from "https://cdn.jsdelivr.net/gh/juliapluto/js-sha256@7a98375/src/sha256.mjs"`
+ *
  */
 
 var ERROR = 'input is invalid type';
