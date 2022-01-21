@@ -62,9 +62,6 @@ var createOutputMethod = function (outputType, is224) {
 
 var createMethod = function (is224) {
   var method = createOutputMethod('hex', is224);
-  if (NODE_JS) {
-    method = nodeWrap(method, is224);
-  }
   method.create = function () {
     return new Sha256(is224);
   };
