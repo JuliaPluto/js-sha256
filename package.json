@@ -3,18 +3,27 @@
   "version": "0.9.0",
   "description": "A simple SHA-256 / SHA-224 hash function for JavaScript supports UTF-8 encoding.",
   "main": "src/sha256.js",
+  "module": "src/sha256.mjs",
+  "exports": {
+    ".": {
+      "import": "./src/sha256.mjs",
+      "require": "./src/sha256.js"
+    }
+  },
   "devDependencies": {
-    "expect.js": "~0.3.1",
-    "mocha": "~2.3.4",
-    "nyc": "^11.3.0",
-    "uglify-js": "^3.1.9",
-    "webworker-threads": "^0.7.13"
+    "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/ui": "^2.0.0",
+    "terser": "^5.31.3",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.0"
   },
   "scripts": {
-    "test": "nyc mocha tests/node-test.js",
-    "report": "nyc --reporter=html --reporter=text mocha tests/node-test.js",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "build": "uglifyjs src/sha256.js -c -m eval --comments -o build/sha256.min.js"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
+    "build": "vite build",
+    "dev": "vite build --watch"
   },
   "repository": {
     "type": "git",
